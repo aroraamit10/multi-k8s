@@ -10,7 +10,7 @@ docker push amitairtel09/multi-client:$SHA
 docker push amitairtel09/multi-server:$SHA
 docker push amitairtel09/multi-worker:$SHA
 
-kubectl delete -f k8s
+kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=amitairtel09/multi-server:$SHA
 kubectl set image deployments/client-deployment server=amitairtel09/multi-client:$SHA
 kubectl set image deployments/worker-deployment server=amitairtel09/multi-worker:$SHA
