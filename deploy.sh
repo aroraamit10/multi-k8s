@@ -10,7 +10,7 @@ docker push aroraamit10/multi-client:$SHA
 docker push aroraamit10/multi-server:$SHA
 docker push aroraamit10/multi-worker:$SHA
 
-kubectl apply -f k8s
+kubectl delete -f k8s
 kubectl set image deployments/server-deployment server=aroraamit10/multi-server:$SHA
 kubectl set image deployments/client-deployment server=aroraamit10/multi-client:$SHA
 kubectl set image deployments/worker-deployment server=aroraamit10/multi-worker:$SHA
