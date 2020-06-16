@@ -19,7 +19,7 @@ before_install:
   - docker build -t aroraamit10/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run aroraamit10/react-test npm run test -- --coverage a
+  - docker run aroraamit10/react-test npm run test -- --coverage
 
 deploy:
   provider: script
